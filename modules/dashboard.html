@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Central Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-md);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            height: 100vh;
+            overflow-y: auto;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .dash-nav {
+            margin-top: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dash-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .dash-link:hover,
+        .dash-link.active {
+            color: white;
+            background: var(--bg-glass);
+        }
+
+        .dash-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .user-profile {
+            margin-top: auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .stat-card {
+            padding: var(--space-lg);
+        }
+
+        .module-card {
+            transition: var(--transition-smooth);
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <aside class="sidebar">
+        <a href="../index.html" class="logo" style="margin-bottom: 2rem;">
+            <i class="fas fa-cubes"></i>
+            <span>NEXUS</span>
+        </a>
+
+        <div class="dash-nav">
+            <a href="dashboard.html" class="dash-link active"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="booking.html" class="dash-link"><i class="fas fa-calendar-alt"></i> Booking</a>
+            <a href="client-portal.html" class="dash-link"><i class="fas fa-briefcase"></i> Client Portal</a>
+            <a href="saas-tools.html" class="dash-link"><i class="fas fa-tools"></i> SaaS Tools</a>
+            <a href="shop.html" class="dash-link"><i class="fas fa-shopping-cart"></i> E-Commerce</a>
+            <a href="learning.html" class="dash-link"><i class="fas fa-graduation-cap"></i> Learning</a>
+            <a href="community.html" class="dash-link"><i class="fas fa-users"></i> Community</a>
+            <a href="admin.html" class="dash-link admin-only" style="display: none;"><i class="fas fa-user-shield"></i>
+                Admin Panel</a>
+        </div>
+
+        <div class="user-profile">
+            <div class="avatar" id="userAvatar">JD</div>
+            <div style="flex-grow: 1;">
+                <div style="font-size: 0.9rem; font-weight: 600;" id="userName">John Doe</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);" id="userRole">Standard User</div>
+            </div>
+            <a href="../auth/login.html"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+            <div>
+                <h1 style="font-size: 2rem;">Command Center | <span id="welcomeName">John</span></h1>
+                <p style="color: var(--text-muted);">Unified management of your engineering labs, SaaS deployments, and
+                    network collaborative efforts.</p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn btn-outline"><i class="fas fa-bell"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> New Task</button>
+            </div>
+        </header>
+
+        <section class="dash-grid">
+            <div class="glass-card stat-card animate-slide">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div style="background: rgba(99, 102, 241, 0.1); padding: 0.8rem; border-radius: var(--radius-md);">
+                        <i class="fas fa-dollar-sign" style="color: var(--primary); font-size: 1.5rem;"></i>
+                    </div>
+                    <span class="badge badge-success">+12%</span>
+                </div>
+                <h4 style="color: var(--text-muted); font-size: 0.9rem;">Total Revenue</h4>
+                <h2 style="font-size: 2rem;">$12,450.00</h2>
+            </div>
+            <div class="glass-card stat-card animate-slide" style="animation-delay: 0.1s;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div style="background: rgba(6, 182, 212, 0.1); padding: 0.8rem; border-radius: var(--radius-md);">
+                        <i class="fas fa-users" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                    </div>
+                    <span class="badge badge-primary">+8%</span>
+                </div>
+                <h4 style="color: var(--text-muted); font-size: 0.9rem;">New Customers</h4>
+                <h2 style="font-size: 2rem;">148</h2>
+            </div>
+            <div class="glass-card stat-card animate-slide" style="animation-delay: 0.2s;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div style="background: rgba(244, 63, 94, 0.1); padding: 0.8rem; border-radius: var(--radius-md);">
+                        <i class="fas fa-clock" style="color: var(--accent); font-size: 1.5rem;"></i>
+                    </div>
+                    <span class="badge badge-success">On Track</span>
+                </div>
+                <h4 style="color: var(--text-muted); font-size: 0.9rem;">Active Projects</h4>
+                <h2 style="font-size: 2rem;">24</h2>
+            </div>
+        </section>
+
+        <section style="margin-top: var(--space-xl);">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
+                <h3>Quick Access Modules</h3>
+                <a href="#" style="color: var(--primary); font-size: 0.9rem;">View All</a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
+                <div class="glass-card module-card"
+                    style="padding: var(--space-lg); display: flex; gap: var(--space-md);">
+                    <div style="font-size: 2.5rem; color: var(--primary); opacity: 0.8;"><i
+                            class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <h4>Learning Portal</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem;">You have 2
+                            courses in progress. Last active 4h ago.</p>
+                        <a href="learning.html" class="btn btn-outline"
+                            style="padding: 0.4rem 1rem; font-size: 0.8rem;">Resume Learning</a>
+                    </div>
+                </div>
+                <div class="glass-card module-card"
+                    style="padding: var(--space-lg); display: flex; gap: var(--space-md);">
+                    <div style="font-size: 2.5rem; color: var(--secondary); opacity: 0.8;"><i
+                            class="fas fa-shopping-cart"></i></div>
+                    <div>
+                        <h4>Marketplace</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem;">5 items in your
+                            wishlist. New arrivals in 'SaaS Addons'.</p>
+                        <a href="shop.html" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Go
+                            Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: var(--space-xl);">
+            <h3>Recent Activity</h3>
+            <div class="glass-card" style="margin-top: var(--space-md); overflow: hidden;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr
+                            style="border-bottom: 1px solid var(--border-glass); background: rgba(255, 255, 255, 0.02);">
+                            <th style="padding: 1rem;">Source</th>
+                            <th style="padding: 1rem;">Action</th>
+                            <th style="padding: 1rem;">Status</th>
+                            <th style="padding: 1rem;">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-glass);">
+                            <td style="padding: 1rem;"><i class="fas fa-briefcase" style="margin-right: 0.5rem;"></i>
+                                Client Portal</td>
+                            <td style="padding: 1rem;">Invoice #8842 paid by Client</td>
+                            <td style="padding: 1rem;"><span class="badge badge-success">Completed</span></td>
+                            <td style="padding: 1rem; color: var(--text-muted);">Feb 16, 10:24 AM</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-glass);">
+                            <td style="padding: 1rem;"><i class="fas fa-graduation-cap"
+                                    style="margin-right: 0.5rem;"></i> Learning</td>
+                            <td style="padding: 1rem;">Started course "Mastering SaaS UI"</td>
+                            <td style="padding: 1rem;"><span class="badge badge-primary">In Progress</span></td>
+                            <td style="padding: 1rem; color: var(--text-muted);">Feb 15, 2:30 PM</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-glass);">
+                            <td style="padding: 1rem;"><i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
+                                Booking</td>
+                            <td style="padding: 1rem;">Consultation with Sarah Miller</td>
+                            <td style="padding: 1rem;"><span class="badge badge-primary">Scheduled</span></td>
+                            <td style="padding: 1rem; color: var(--text-muted);">Feb 18, 9:00 AM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Role UI handling
+        const role = localStorage.getItem('nexus_role') || 'user';
+        const userName = localStorage.getItem('nexus_user_name') || 'John Doe';
+
+        document.getElementById('userRole').textContent = role.charAt(0).toUpperCase() + role.slice(1);
+        document.getElementById('userName').textContent = userName;
+        document.getElementById('welcomeName').textContent = userName.split(' ')[0];
+        document.getElementById('userAvatar').textContent = userName.split(' ').map(n => n[0]).join('');
+
+        if (role === 'admin') {
+            document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'flex');
+        }
+    </script>
+</body>
+
+</html>

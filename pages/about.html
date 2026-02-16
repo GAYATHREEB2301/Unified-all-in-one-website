@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | About Us</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <header id="header" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-cubes"></i>
+                    <span>NEXUS</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu"
+                        aria-expanded="false">
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                    </button>
+                    <a href="../auth/login.html" class="btn btn-outline" id="loginBtn">Login</a>
+                    <a href="../auth/signup.html" class="btn btn-primary" id="signupBtn">Sign Up</a>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme" aria-pressed="false">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown" id="accountDropdown">
+                        <button class="user-nav-toggle" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="accountMenu" aria-label="Account Menu">
+                            <span class="user-role-badge"
+                                style="font-size: 0.75rem; background: var(--bg-glass); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary); margin-right: 0.5rem;">User</span>
+                            <span>Account</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountMenu" role="menu">
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-bell"></i>
+                                Notifications</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-user"></i> Profile</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-credit-card"></i>
+                                Billing</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="../auth/login.html" class="dropdown-item" role="menuitem"
+                                style="color: var(--accent);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <!-- Engineering Excellence Section -->
+        <section class="section animate-fade">
+            <div class="container">
+                <div style="display: flex; gap: var(--space-xl); align-items: center;">
+                    <div style="flex: 1.2;">
+                        <span
+                            style="color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">ENGINEERING
+                            BEYOND CODE</span>
+                        <h1 style="font-size: 3.8rem; margin: 1rem 0; font-weight: 800; line-height: 1.1;">Architecting
+                            Digital Dominance</h1>
+                        <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
+                            Nexus Software Engineering isn't just a development studio; we are a strategic technical
+                            partner for enterprises that refuse to settle for "off-the-shelf" limitations. We specialize
+                            in building complex, high-availability software ecosystems that solve deep-rooted business
+                            challenges through precision engineering and data-centric logic.
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+                            <div>
+                                <h3 style="color: var(--secondary); margin-bottom: 0.8rem;">Rigorous Standards</h3>
+                                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Our
+                                    development lifecycle incorporates automated testing, peer-reviewed architecture
+                                    audits, and exhaustive security hardening to ensure your code is an asset, not a
+                                    liability.</p>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Future-Ready Scaling</h3>
+                                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">We build
+                                    systems using microservices and cloud-native patterns that allow your platform to
+                                    scale gracefully from 1,000 to 1,000,000+ concurrent requests without degradation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 0.8;">
+                        <div style="position: relative;">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+                                alt="Nexus Engineering Team"
+                                style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--hero-shadow);">
+                            <div class="glass-card"
+                                style="position: absolute; bottom: -20px; left: -20px; padding: 1.5rem; border-radius: var(--radius-md); max-width: 200px;">
+                                <h4 style="font-size: 2rem; color: var(--primary);">10+</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Years of Technical Leadership
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section" style="background: rgba(255, 255, 255, 0.01);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Our Mission: Unifying the Fragmented</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
+                        In an era of dispersed tools and disconnected data, Nexus exists to create the "Single Source of
+                        Truth." Our mission is to engineer unified platforms where commerce, learning, and community
+                        converge into a single, high-performance experience that empowers operational efficiency across
+                        the globe.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech-stack" class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-xl);">
+                    <h2 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem;">Our Battle-Tested Arsenal</h2>
+                    <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">We don't
+                        chase every trend. We select specific, enterprise-grade technologies that offer the best balance
+                        of performance, security, and developer productivity.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg);">
+                    <div class="glass-card" style="padding: var(--space-xl) var(--space-lg);">
+                        <div style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;"><i
+                                class="fas fa-layer-group"></i></div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem;">Frontend Ecosystem</h4>
+                        <p
+                            style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Building high-fidelity interfaces that respond instantly to user intent across all devices.
+                        </p>
+                        <ul
+                            style="color: var(--text-main); font-size: 0.85rem; display: grid; gap: 0.5rem; font-weight: 600;">
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> React /
+                                Next.js</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i>
+                                TypeScript</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> Framer
+                                Motion</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card" style="padding: var(--space-xl) var(--space-lg);">
+                        <div style="color: var(--secondary); margin-bottom: 1.5rem; font-size: 2rem;"><i
+                                class="fas fa-server"></i></div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem;">Backend Power</h4>
+                        <p
+                            style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Developing the high-performance engines that handle complex business logic and data routing.
+                        </p>
+                        <ul
+                            style="color: var(--text-main); font-size: 0.85rem; display: grid; gap: 0.5rem; font-weight: 600;">
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> Node.js
+                                (V8 Runtime)</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> Python
+                                / FastAPI</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> Go
+                                (Concurrency)</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card" style="padding: var(--space-xl) var(--space-lg);">
+                        <div style="color: var(--accent); margin-bottom: 1.5rem; font-size: 2rem;"><i
+                                class="fas fa-database"></i></div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem;">Data Infrastructure</h4>
+                        <p
+                            style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Ensuring data integrity and lightning-fast retrieval even at immense transactional volumes.
+                        </p>
+                        <ul
+                            style="color: var(--text-main); font-size: 0.85rem; display: grid; gap: 0.5rem; font-weight: 600;">
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i>
+                                PostgreSQL (Relational)</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> Redis
+                                (In-Memory)</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i>
+                                ClickHouse</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card" style="padding: var(--space-xl) var(--space-lg);">
+                        <div style="color: var(--success); margin-bottom: 1.5rem; font-size: 2rem;"><i
+                                class="fas fa-cloud"></i></div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem;">DevOps & SRE</h4>
+                        <p
+                            style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Automating the journey from local code to global production with zero-downtime deployments.
+                        </p>
+                        <ul
+                            style="color: var(--text-main); font-size: 0.85rem; display: grid; gap: 0.5rem; font-weight: 600;">
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> Docker
+                                / Kubernetes</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i> AWS
+                                Infrastructure</li>
+                            <li><i class="fas fa-check"
+                                    style="color: var(--success); font-size: 0.7rem; margin-right: 0.5rem;"></i>
+                                Terraform (IaC)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: var(--space-md);">
+                        <i class="fas fa-cubes"></i>
+                        <span>NEXUS</span>
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The definitive solution for modern
+                        entrepreneurs, creators, and
+                        businesses looking to unify their digital presence.</p>
+                    <a href="../auth/signup.html" class="btn btn-primary">Sign Up Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">SaaS Tools</a></li>
+                        <li><a href="services.html">E-commerce</a></li>
+                        <li><a href="services.html">Learning</a></li>
+                        <li><a href="services.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links" style="margin-bottom: 1.5rem;">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Nexus Unified Platforms. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

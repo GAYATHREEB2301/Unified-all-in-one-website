@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Community Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-md);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            height: 100vh;
+            overflow-y: auto;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .dash-nav {
+            margin-top: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dash-link:hover,
+        .dash-link.active {
+            color: white;
+            background: var(--bg-glass);
+        }
+
+        .dash-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .post-card {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .post-stats i {
+            margin-right: 0.3rem;
+        }
+
+        .group-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .group-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition-fast);
+        }
+
+        .group-item:hover {
+            background: var(--bg-glass);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <aside class="sidebar">
+        <a href="../index.html" class="logo" style="margin-bottom: 2rem;">
+            <i class="fas fa-cubes"></i>
+            <span>NEXUS</span>
+        </a>
+        <div class="dash-nav">
+            <a href="dashboard.html" class="dash-link"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="booking.html" class="dash-link"><i class="fas fa-calendar-alt"></i> Booking</a>
+            <a href="client-portal.html" class="dash-link"><i class="fas fa-briefcase"></i> Client Portal</a>
+            <a href="saas-tools.html" class="dash-link"><i class="fas fa-tools"></i> SaaS Tools</a>
+            <a href="shop.html" class="dash-link"><i class="fas fa-shopping-cart"></i> E-Commerce</a>
+            <a href="learning.html" class="dash-link"><i class="fas fa-graduation-cap"></i> Learning</a>
+            <a href="community.html" class="dash-link active"><i class="fas fa-users"></i> Community</a>
+        </div>
+        <div class="user-profile">
+            <div class="avatar">JD</div>
+            <div style="flex-grow: 1;">
+                <div style="font-size: 0.9rem; font-weight: 600;">John Doe</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Standard User</div>
+            </div>
+            <a href="../auth/login.html"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content" style="display: flex; gap: var(--space-xl);">
+        <div style="flex-grow: 1;">
+            <header
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+                <div>
+                    <h1 style="font-size: 2rem;">Global Engineer Network</h1>
+                    <p style="color: var(--text-muted);">Collaborate with the world's most innovative software
+                        architects.</p>
+                </div>
+                <button class="btn btn-primary"><i class="fas fa-edit"></i> Start Technical Thread</button>
+            </header>
+
+            <div class="glass-card post-card animate-slide">
+                <div class="post-header">
+                    <div class="avatar" style="background: var(--secondary);">CK</div>
+                    <div>
+                        <div style="font-weight: 600;">Chen Kang</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">System Architect • 2h ago</div>
+                    </div>
+                </div>
+                <h4 style="margin-bottom: 0.5rem;">Optimizing Rust for Real-time SaaS Data Processing</h4>
+                <p>Discussing low-latency strategies for multi-tenant data pipelines. What are your thoughts on
+                    zero-copy serialization in distributed systems?</p>
+                <div class="post-stats">
+                    <span><i class="far fa-heart"></i> 156</span>
+                    <span><i class="far fa-comment"></i> 48 Replies</span>
+                    <span><i class="far fa-share-square"></i> Share Blueprint</span>
+                </div>
+            </div>
+
+            <div class="glass-card post-card animate-slide" style="animation-delay: 0.1s;">
+                <div class="post-header">
+                    <div class="avatar">EB</div>
+                    <div>
+                        <div style="font-weight: 600;">Elena Belova</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">DevOps Lead • 5h ago</div>
+                    </div>
+                </div>
+                <h4 style="margin-bottom: 0.5rem;">Kubernetes Multi-cluster Management via Nexus API</h4>
+                <p>We've successfully bridged three regional clusters using the Nexus bridge. Performance is stable.
+                    Looking for peer review on our ingress setup.</p>
+                <div class="post-stats">
+                    <span><i class="fas fa-heart" style="color: var(--accent);"></i> 89</span>
+                    <span><i class="far fa-comment"></i> 14 Replies</span>
+                    <span><i class="far fa-share-square"></i> Share Config</span>
+                </div>
+            </div>
+        </div>
+
+        <aside style="width: 320px; flex-shrink: 0;">
+            <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+                <h4 style="margin-bottom: 1rem;">Network Perks</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Join the elite Nexus
+                    Community for exclusive software benefits.</p>
+                <ul style="font-size: 0.85rem; color: var(--text-muted); display: grid; gap: 0.8rem;">
+                    <li><i class="fas fa-handshake" style="color: var(--primary);"></i> Talent Matchmaking</li>
+                    <li><i class="fas fa-bolt" style="color: var(--primary);"></i> Early Access Beta Tools</li>
+                    <li><i class="fas fa-users" style="color: var(--primary);"></i> Peer Architecture Reviews</li>
+                    <li><i class="fas fa-code-branch" style="color: var(--primary);"></i> Shared OSS Research</li>
+                </ul>
+                <button class="btn btn-outline" style="width: 100%; margin-top: 1.5rem; font-size: 0.8rem;">Upgrade
+                    Membership</button>
+            </div>
+
+            <div class="glass-card" style="padding: 1.5rem;">
+                <h4 style="margin-bottom: 1rem;">Sectors Online</h4>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <div class="avatar" style="position: relative;">
+                        SA <div
+                            style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: var(--success); border-radius: 50%; border: 2px solid var(--bg-main);">
+                        </div>
+                    </div>
+                    <div class="avatar" style="position: relative; background: var(--secondary);">
+                        FE <div
+                            style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: var(--success); border-radius: 50%; border: 2px solid var(--bg-main);">
+                        </div>
+                    </div>
+                    <div class="avatar" style="position: relative; background: var(--accent);">
+                        DO <div
+                            style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: var(--warning); border-radius: 50%; border: 2px solid var(--bg-main);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+
+</html>

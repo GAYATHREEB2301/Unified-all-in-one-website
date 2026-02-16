@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Marketplace</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-header);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-md);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            height: 100vh;
+            overflow-y: auto;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .dash-nav {
+            margin-top: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dash-link:hover,
+        .dash-link.active {
+            color: white;
+            background: var(--bg-glass);
+        }
+
+        .dash-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .user-profile {
+            margin-top: auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .product-card {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background: #1e293b;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <aside class="sidebar">
+        <a href="../index.html" class="logo" style="margin-bottom: 2rem;">
+            <i class="fas fa-cubes"></i>
+            <span>NEXUS</span>
+        </a>
+        <div class="dash-nav">
+            <a href="dashboard.html" class="dash-link"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="booking.html" class="dash-link"><i class="fas fa-calendar-alt"></i> Booking</a>
+            <a href="client-portal.html" class="dash-link"><i class="fas fa-briefcase"></i> Client Portal</a>
+            <a href="saas-tools.html" class="dash-link"><i class="fas fa-tools"></i> SaaS Tools</a>
+            <a href="shop.html" class="dash-link active"><i class="fas fa-shopping-cart"></i> E-Commerce</a>
+            <a href="learning.html" class="dash-link"><i class="fas fa-graduation-cap"></i> Learning</a>
+            <a href="community.html" class="dash-link"><i class="fas fa-users"></i> Community</a>
+        </div>
+        <div class="user-profile">
+            <div class="avatar">JD</div>
+            <div style="flex-grow: 1;">
+                <div style="font-size: 0.9rem; font-weight: 600;">John Doe</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Standard User</div>
+            </div>
+            <a href="../auth/login.html"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+            <div>
+                <h1 style="font-size: 2rem;">Nexus Marketplace</h1>
+                <p style="color: var(--text-muted);">Digital assets, toolkits, and physical merchandise.</p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn btn-outline"><i class="fas fa-shopping-bag"></i> Cart (3)</button>
+                <div style="position: relative;">
+                    <input type="text" class="btn btn-outline" style="padding-left: 2.5rem; text-align: left;"
+                        placeholder="Search products...">
+                    <i class="fas fa-search"
+                        style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                </div>
+            </div>
+        </header>
+
+        <section class="product-grid">
+            <div class="glass-card product-card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400"
+                    alt="UI Kit" class="product-img">
+                <div class="product-info">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <span class="badge badge-primary">UI/UX</span>
+                        <span style="font-weight: 700; color: var(--primary);">$49.00</span>
+                    </div>
+                    <h4>Nexus Admin UI Kit</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; flex-grow: 1;">A
+                        comprehensive library of 200+ components for React and Vue.</p>
+                    <button class="btn btn-outline" style="width: 100%; justify-content: center; margin-top: 1rem;">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="glass-card product-card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400"
+                    alt="SaaS Pro" class="product-img">
+                <div class="product-info">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <span class="badge badge-success">SaaS</span>
+                        <span style="font-weight: 700; color: var(--primary);">$29/mo</span>
+                    </div>
+                    <h4>Analytics Pro Add-on</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; flex-grow: 1;">Unlock
+                        heatmaps, funnel analysis, and custom cohorts.</p>
+                    <button class="btn btn-primary"
+                        style="width: 100%; justify-content: center; margin-top: 1rem;">Subscribe Now</button>
+                </div>
+            </div>
+            <div class="glass-card product-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400"
+                    alt="Code" class="product-img">
+                <div class="product-info">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <span class="badge badge-primary">Code</span>
+                        <span style="font-weight: 700; color: var(--primary);">$129.00</span>
+                    </div>
+                    <h4>API Connector Hub</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; flex-grow: 1;">Pre-built
+                        integrations for Stripe, Twilio, and many more.</p>
+                    <button class="btn btn-outline" style="width: 100%; justify-content: center; margin-top: 1rem;">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="glass-card product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400"
+                    alt="Merch" class="product-img">
+                <div class="product-info">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <span class="badge" style="background: rgba(255,255,255,0.1); color: white;">Merch</span>
+                        <span style="font-weight: 700; color: var(--primary);">$35.00</span>
+                    </div>
+                    <h4>Nexus Hoodie (Limited)</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; flex-grow: 1;">Premium
+                        cotton hoodie with futuristic minimal design.</p>
+                    <button class="btn btn-outline"
+                        style="width: 100%; justify-content: center; margin-top: 1rem;">Select Size</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Project Gallery</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <header id="header" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-cubes"></i>
+                    <span>NEXUS</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu"
+                        aria-expanded="false">
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                    </button>
+                    <a href="../auth/login.html" class="btn btn-outline" id="loginBtn">Login</a>
+                    <a href="../auth/signup.html" class="btn btn-primary" id="signupBtn">Sign Up</a>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme" aria-pressed="false">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown" id="accountDropdown">
+                        <button class="user-nav-toggle" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="accountMenu" aria-label="Account Menu">
+                            <span class="user-role-badge"
+                                style="font-size: 0.75rem; background: var(--bg-glass); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary); margin-right: 0.5rem;">User</span>
+                            <span>Account</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountMenu" role="menu">
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-bell"></i>
+                                Notifications</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-user"></i> Profile</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-credit-card"></i>
+                                Billing</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="../auth/login.html" class="dropdown-item" role="menuitem"
+                                style="color: var(--accent);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="section">
+            <div class="container">
+                <div style="display: flex; gap: var(--space-xl); align-items: center; margin-bottom: 5rem;">
+                    <div style="flex: 1.1; text-align: left;">
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Proven
+                            Deliverables</span>
+                        <h1 style="font-size: 3.5rem; font-weight: 800; margin: 1rem 0;">Excellence in Action</h1>
+                        <p style="color: var(--text-muted); font-size: 1.25rem; line-height: 1.8;">
+                            Explore our technical success stories. We partner with global brands to engineer resilient
+                            architectures and disruptive digital products that define their respective sectors.
+                        </p>
+                    </div>
+                    <div style="flex: 0.9;">
+                        <div class="glass-card"
+                            style="padding: 0.5rem; border-radius: var(--radius-lg); position: relative; box-shadow: var(--hero-shadow);">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000"
+                                alt="Tech Showcase"
+                                style="width: 100%; height: 350px; object-fit: cover; border-radius: var(--radius-md);">
+                            <div
+                                style="position: absolute; top: 10px; right: 10px; background: var(--bg-glass); backdrop-filter: blur(10px); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; border: 1px solid var(--border-glass);">
+                                <i class="fas fa-eye" style="color: var(--primary);"></i> Global Reach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl);">
+                    <div class="glass-card" style="overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                        <div style="position: relative;">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+                                alt="FinTech App" style="width: 100%; height: 350px; object-fit: cover;">
+                            <div
+                                style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: linear-gradient(to top, var(--bg-main), transparent);">
+                            </div>
+                        </div>
+                        <div style="padding: var(--space-lg); padding-top: 0;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <span class="badge badge-primary">FinTech</span>
+                                <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600;"><i
+                                        class="fas fa-clock"></i> 6 Months Timeline</span>
+                            </div>
+                            <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Zenith Global Bank Portal</h3>
+                            <p
+                                style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+                                We architected a high-concurrency, real-time banking dashboard serving 2M+ active
+                                monthly users. The system maintains sub-100ms P99 latency while adhering to strict Basel
+                                III compliance and AES-256 encryption standards.
+                            </p>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                                <div style="display: flex; gap: 0.8rem;">
+                                    <i class="fab fa-react" style="color: #61DAFB; font-size: 1.5rem;"></i>
+                                    <i class="fab fa-aws" style="color: #FF9900; font-size: 1.5rem;"></i>
+                                    <i class="fab fa-golang" style="color: #00ADD8; font-size: 1.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">Case
+                                    Study Details <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                        <div style="position: relative;">
+                            <img src="https://images.unsplash.com/photo-1551288049-bbda48658a7d?auto=format&fit=crop&q=80&w=800"
+                                alt="E-com Platform" style="width: 100%; height: 350px; object-fit: cover;">
+                            <div
+                                style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: linear-gradient(to top, var(--bg-main), transparent);">
+                            </div>
+                        </div>
+                        <div style="padding: var(--space-lg); padding-top: 0;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <span class="badge"
+                                    style="background: var(--secondary); color: white;">E-Commerce</span>
+                                <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600;"><i
+                                        class="fas fa-clock"></i> 4 Months Timeline</span>
+                            </div>
+                            <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">LuxeMarket SaaS Core</h3>
+                            <p
+                                style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+                                Built a headless multi-tenant engine enabling 500+ independent luxury brands to launch
+                                globally optimized storefronts. Integrated a proprietary inventory reconciliation
+                                algorithm that reduced over-sell incidents by 94%.
+                            </p>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                                <div style="display: flex; gap: 0.8rem;">
+                                    <i class="fab fa-node-js" style="color: #339933; font-size: 1.5rem;"></i>
+                                    <i class="fas fa-database" style="color: #4479A1; font-size: 1.5rem;"></i>
+                                    <i class="fab fa-vuejs" style="color: #4FC08D; font-size: 1.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    style="color: var(--secondary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">Case
+                                    Study Details <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 6rem; text-align: center; padding: 4rem; background: radial-gradient(circle at center, rgba(99, 102, 241, 0.05), transparent); border-radius: var(--radius-xl);">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Architect Your Success?</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem;">
+                        Our engineering team is currently accepting high-impact project inquiries for the coming
+                        quarter. Let's build something exceptional.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="padding: 1.2rem 3rem; font-size: 1.1rem; border-radius: 50px; box-shadow: var(--shadow-glow);">Initiate
+                        Project Discovery</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: var(--space-md);">
+                        <i class="fas fa-cubes"></i>
+                        <span>NEXUS</span>
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The definitive solution for modern
+                        entrepreneurs, creators, and
+                        businesses looking to unify their digital presence.</p>
+                    <a href="../auth/signup.html" class="btn btn-primary">Sign Up Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">SaaS Tools</a></li>
+                        <li><a href="services.html">E-commerce</a></li>
+                        <li><a href="services.html">Learning</a></li>
+                        <li><a href="services.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links" style="margin-bottom: 1.5rem;">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Nexus Unified Platforms. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

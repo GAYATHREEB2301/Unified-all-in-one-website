@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Client Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-md);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            height: 100vh;
+            overflow-y: auto;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .dash-nav {
+            margin-top: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dash-link:hover,
+        .dash-link.active {
+            color: white;
+            background: var(--bg-glass);
+        }
+
+        .dash-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .user-profile {
+            margin-top: auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .tab-nav {
+            display: flex;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border-glass);
+            margin-bottom: var(--space-lg);
+        }
+
+        .tab {
+            padding: 1rem 0;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition-fast);
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .file-card {
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .file-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <aside class="sidebar">
+        <a href="../index.html" class="logo" style="margin-bottom: 2rem;">
+            <i class="fas fa-cubes"></i>
+            <span>NEXUS</span>
+        </a>
+        <div class="dash-nav">
+            <a href="dashboard.html" class="dash-link"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="booking.html" class="dash-link"><i class="fas fa-calendar-alt"></i> Booking</a>
+            <a href="client-portal.html" class="dash-link active"><i class="fas fa-briefcase"></i> Client Portal</a>
+            <a href="saas-tools.html" class="dash-link"><i class="fas fa-tools"></i> SaaS Tools</a>
+            <a href="shop.html" class="dash-link"><i class="fas fa-shopping-cart"></i> E-Commerce</a>
+            <a href="learning.html" class="dash-link"><i class="fas fa-graduation-cap"></i> Learning</a>
+            <a href="community.html" class="dash-link"><i class="fas fa-users"></i> Community</a>
+        </div>
+        <div class="user-profile">
+            <div class="avatar">JD</div>
+            <div style="flex-grow: 1;">
+                <div style="font-size: 0.9rem; font-weight: 600;">John Doe</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Standard User</div>
+            </div>
+            <a href="../auth/login.html"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+            <div>
+                <h1 style="font-size: 2rem;">Client Portal</h1>
+                <p style="color: var(--text-muted);">View projects, download files, and manage invoices.</p>
+            </div>
+            <button class="btn btn-primary"><i class="fas fa-upload"></i> Upload File</button>
+        </header>
+
+        <nav class="tab-nav">
+            <div class="tab active">Projects</div>
+            <div class="tab">Files & Assets</div>
+            <div class="tab">Invoices</div>
+        </nav>
+
+        <div id="projects-view">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
+                <div class="glass-card" style="padding: var(--space-lg);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <h3>Brand Identity Reveal</h3>
+                        <span class="badge badge-primary">75% Complete</span>
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Designing the comprehensive brand
+                        guidelines and asset pack for 'EcoStream'.</p>
+                    <div
+                        style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 75%; height: 100%; background: var(--primary);"></div>
+                    </div>
+                    <div
+                        style="margin-top: 1rem; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted);">
+                        <span>Due: 24 Feb, 2026</span>
+                        <span>12 Tasks remaining</span>
+                    </div>
+                </div>
+                <div class="glass-card" style="padding: var(--space-lg);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <h3>SEO Optimization</h3>
+                        <span class="badge badge-success">On Track</span>
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Q1 Search Engine Optimization strategy
+                        and implementation for main portal.</p>
+                    <div
+                        style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 40%; height: 100%; background: var(--secondary);"></div>
+                    </div>
+                    <div
+                        style="margin-top: 1rem; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted);">
+                        <span>Due: 15 Mar, 2026</span>
+                        <span>5 Milestones to go</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section style="margin-top: var(--space-xl);">
+            <h3>Recent Files</h3>
+            <div class="file-grid" style="margin-top: var(--space-md);">
+                <div class="glass-card file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div style="font-weight: 500;">Invoice_Feb.pdf</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">2.4 MB • 2h ago</div>
+                </div>
+                <div class="glass-card file-card">
+                    <i class="fas fa-file-image file-icon" style="color: var(--secondary);"></i>
+                    <div style="font-weight: 500;">Logo_Draft_V2.png</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">8.1 MB • 5h ago</div>
+                </div>
+                <div class="glass-card file-card">
+                    <i class="fas fa-file-code file-icon" style="color: var(--accent);"></i>
+                    <div style="font-weight: 500;">config_backup.json</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">14 KB • Yesterday</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

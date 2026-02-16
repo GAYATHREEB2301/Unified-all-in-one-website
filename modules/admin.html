@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Admin Control</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-md);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            height: 100vh;
+            overflow-y: auto;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .dash-nav {
+            margin-top: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dash-link:hover,
+        .dash-link.active {
+            color: white;
+            background: var(--bg-glass);
+        }
+
+        .dash-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .health-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .dot-online {
+            background: var(--success);
+            box-shadow: 0 0 10px var(--success);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <aside class="sidebar">
+        <a href="../index.html" class="logo" style="margin-bottom: 2rem;">
+            <i class="fas fa-cubes"></i>
+            <span>NEXUS</span>
+        </a>
+        <div class="dash-nav">
+            <a href="dashboard.html" class="dash-link"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="booking.html" class="dash-link"><i class="fas fa-calendar-alt"></i> Booking</a>
+            <a href="client-portal.html" class="dash-link"><i class="fas fa-briefcase"></i> Client Portal</a>
+            <a href="saas-tools.html" class="dash-link"><i class="fas fa-tools"></i> SaaS Tools</a>
+            <a href="shop.html" class="dash-link"><i class="fas fa-shopping-cart"></i> E-Commerce</a>
+            <a href="learning.html" class="dash-link"><i class="fas fa-graduation-cap"></i> Learning</a>
+            <a href="community.html" class="dash-link"><i class="fas fa-users"></i> Community</a>
+            <a href="admin.html" class="dash-link active"><i class="fas fa-user-shield"></i> Admin Panel</a>
+        </div>
+        <div class="user-profile">
+            <div class="avatar" style="background: var(--accent);">AD</div>
+            <div style="flex-grow: 1;">
+                <div style="font-size: 0.9rem; font-weight: 600;">System Admin</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Platform Owner</div>
+            </div>
+            <a href="../auth/login.html"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+            <div>
+                <h1 style="font-size: 2rem;">Platform Overview</h1>
+                <div class="health-indicator">
+                    <div class="dot dot-online"></div>
+                    <span style="color: var(--success);">All Systems Operational</span>
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn btn-outline"><i class="fas fa-download"></i> Export Data</button>
+                <button class="btn btn-primary"><i class="fas fa-cog"></i> Global Settings</button>
+            </div>
+        </header>
+
+        <section class="dash-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="glass-card stat-card">
+                <h4 style="color: var(--text-muted); font-size: 0.8rem;">Total Users</h4>
+                <h2 style="font-size: 1.8rem;">52,492</h2>
+                <div style="font-size: 0.8rem; color: var(--success); margin-top: 0.5rem;"><i
+                        class="fas fa-arrow-up"></i> 5.2%</div>
+            </div>
+            <div class="glass-card stat-card">
+                <h4 style="color: var(--text-muted); font-size: 0.8rem;">Monthly Revenue</h4>
+                <h2 style="font-size: 1.8rem;">$142.8k</h2>
+                <div style="font-size: 0.8rem; color: var(--success); margin-top: 0.5rem;"><i
+                        class="fas fa-arrow-up"></i> 12.4%</div>
+            </div>
+            <div class="glass-card stat-card">
+                <h4 style="color: var(--text-muted); font-size: 0.8rem;">Server Load</h4>
+                <h2 style="font-size: 1.8rem;">34%</h2>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Optimal</div>
+            </div>
+            <div class="glass-card stat-card">
+                <h4 style="color: var(--text-muted); font-size: 0.8rem;">Support Tickets</h4>
+                <h2 style="font-size: 1.8rem;">12</h2>
+                <div style="font-size: 0.8rem; color: var(--error); margin-top: 0.5rem;">3 Urgent</div>
+            </div>
+        </section>
+
+        <section style="margin-top: var(--space-xl);">
+            <h3>User Management</h3>
+            <div class="glass-card" style="margin-top: var(--space-md); overflow: hidden;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr
+                            style="border-bottom: 1px solid var(--border-glass); background: rgba(255, 255, 255, 0.02);">
+                            <th style="padding: 1rem;">User</th>
+                            <th style="padding: 1rem;">Role</th>
+                            <th style="padding: 1rem;">Subscription</th>
+                            <th style="padding: 1rem;">Last Active</th>
+                            <th style="padding: 1rem;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-glass);">
+                            <td style="padding: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <div class="avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">JD</div>
+                                <span>John Doe</span>
+                            </td>
+                            <td style="padding: 1rem;"><span class="badge"
+                                    style="background: rgba(255,255,255,0.1);">Client</span></td>
+                            <td style="padding: 1rem;">Pro Plus</td>
+                            <td style="padding: 1rem; color: var(--text-muted);">2m ago</td>
+                            <td style="padding: 1rem;"><button class="btn btn-outline"
+                                    style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">Edit</button></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-glass);">
+                            <td style="padding: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <div class="avatar"
+                                    style="width: 30px; height: 30px; font-size: 0.8rem; background: var(--secondary);">
+                                    SM</div>
+                                <span>Sarah Miller</span>
+                            </td>
+                            <td style="padding: 1rem;"><span class="badge"
+                                    style="background: rgba(255,255,255,0.1);">Student</span></td>
+                            <td style="padding: 1rem;">Free</td>
+                            <td style="padding: 1rem; color: var(--text-muted);">1h ago</td>
+                            <td style="padding: 1rem;"><button class="btn btn-outline"
+                                    style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

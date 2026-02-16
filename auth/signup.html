@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Create Account</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md);
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 500px;
+            padding: var(--space-xl);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+    <div class="auth-container">
+        <div class="auth-card glass-card animate-slide">
+            <div style="text-align: center; margin-bottom: var(--space-xl);">
+                <a href="../index.html" class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                    <i class="fas fa-cubes"></i>
+                    <span>NEXUS</span>
+                </a>
+                <h2>Start Your Journey</h2>
+                <p style="color: var(--text-muted);">Join 50k+ users in the unified ecosystem</p>
+            </div>
+
+            <form action="../modules/dashboard.html">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;" class="form-group">
+                    <div>
+                        <input type="text" class="form-control" placeholder="First Name" required>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Create Password" required>
+                </div>
+                <div class="form-group">
+                    <label
+                        style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+                        <input type="checkbox" style="margin-top: 0.3rem;" required>
+                        <span>I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> and <a
+                                href="#" style="color: var(--primary);">Privacy Policy</a>.</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; justify-content: center; margin-bottom: 1rem;">
+                    Create Account <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div style="text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Log
+                    In</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            localStorage.setItem('nexus_logged_in', 'true');
+            localStorage.setItem('nexus_role', 'user');
+            window.location.href = '../modules/dashboard.html';
+        });
+    </script>
+</body>
+
+</html>

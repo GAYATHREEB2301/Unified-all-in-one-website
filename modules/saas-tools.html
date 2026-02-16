@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | SaaS Tools</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            border-right: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-md);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            height: 100vh;
+            overflow-y: auto;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .dash-nav {
+            margin-top: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dash-link:hover,
+        .dash-link.active {
+            color: white;
+            background: var(--bg-glass);
+        }
+
+        .dash-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .user-profile {
+            margin-top: auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: var(--space-lg);
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <aside class="sidebar">
+        <a href="../index.html" class="logo" style="margin-bottom: 2rem;">
+            <i class="fas fa-cubes"></i>
+            <span>NEXUS</span>
+        </a>
+        <div class="dash-nav">
+            <a href="dashboard.html" class="dash-link"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="booking.html" class="dash-link"><i class="fas fa-calendar-alt"></i> Booking</a>
+            <a href="client-portal.html" class="dash-link"><i class="fas fa-briefcase"></i> Client Portal</a>
+            <a href="saas-tools.html" class="dash-link active"><i class="fas fa-tools"></i> SaaS Tools</a>
+            <a href="shop.html" class="dash-link"><i class="fas fa-shopping-cart"></i> E-Commerce</a>
+            <a href="learning.html" class="dash-link"><i class="fas fa-graduation-cap"></i> Learning</a>
+            <a href="community.html" class="dash-link"><i class="fas fa-users"></i> Community</a>
+        </div>
+        <div class="user-profile">
+            <div class="avatar">JD</div>
+            <div style="flex-grow: 1;">
+                <div style="font-size: 0.9rem; font-weight: 600;">John Doe</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Standard User</div>
+            </div>
+            <a href="../auth/login.html"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+            <div>
+                <h1 style="font-size: 2rem;">SaaS Tools</h1>
+                <p style="color: var(--text-muted);">Powerful integration tools and business apps.</p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <span style="font-size: 0.9rem; color: var(--text-muted); align-self: center;">Plan: <strong
+                        style="color: var(--primary);">Pro Plus</strong></span>
+                <button class="btn btn-primary">Manage Plan</button>
+            </div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg);">
+            <div class="glass-card tool-card">
+                <div>
+                    <i class="fas fa-chart-line"
+                        style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Nexus Analytics</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Advanced traffic and
+                        conversion tracking for your ecosystem.</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge badge-success">Active</span>
+                    <a href="#" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Open Tool</a>
+                </div>
+            </div>
+            <div class="glass-card tool-card">
+                <div>
+                    <i class="fas fa-robot" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h3>Workflow Automator</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Connect modules and
+                        automate repetitive tasks with ease.</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge badge-success">Active</span>
+                    <a href="#" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Open Tool</a>
+                </div>
+            </div>
+            <div class="glass-card tool-card" style="opacity: 0.7;">
+                <div>
+                    <i class="fas fa-envelope-open-text"
+                        style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3>Mail Engine</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Unified email marketing
+                        and automated client communications.</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge"
+                        style="background: rgba(255, 255, 255, 0.1); color: var(--text-muted);">Locked</span>
+                    <a href="#" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Upgrade</a>
+                </div>
+            </div>
+            <div class="glass-card tool-card">
+                <div>
+                    <i class="fas fa-server" style="font-size: 2rem; color: var(--warning); margin-bottom: 1rem;"></i>
+                    <h3>API Console</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Direct access to
+                        developer resources and system hooks.</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge badge-success">Healthy</span>
+                    <a href="#" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">View Logs</a>
+                </div>
+            </div>
+        </div>
+
+        <section style="margin-top: var(--space-xl);">
+            <div class="glass-card"
+                style="padding: var(--space-xl); background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1)); border: 1px solid var(--primary);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="max-width: 60%;">
+                        <h2 style="margin-bottom: 0.5rem;">Need more power?</h2>
+                        <p style="color: var(--text-muted);">Unlock the Enterprise suite including custom AI agents,
+                            dedicated support, and unlimited bandwidth for your entire team.</p>
+                    </div>
+                    <button class="btn btn-primary" style="padding: 1rem 2rem;">Explore Enterprise</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

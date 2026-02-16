@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-xl);
+        }
+
+        .info-card {
+            padding: var(--space-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            color: white;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <header id="header" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-cubes"></i>
+                    <span>NEXUS</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu"
+                        aria-expanded="false">
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                    </button>
+                    <a href="../auth/login.html" class="btn btn-outline" id="loginBtn">Login</a>
+                    <a href="../auth/signup.html" class="btn btn-primary" id="signupBtn">Sign Up</a>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme" aria-pressed="false">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown" id="accountDropdown">
+                        <button class="user-nav-toggle" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="accountMenu" aria-label="Account Menu">
+                            <span class="user-role-badge"
+                                style="font-size: 0.75rem; background: var(--bg-glass); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary); margin-right: 0.5rem;">User</span>
+                            <span>Account</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountMenu" role="menu">
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-bell"></i>
+                                Notifications</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-user"></i> Profile</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-credit-card"></i>
+                                Billing</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="../auth/login.html" class="dropdown-item" role="menuitem"
+                                style="color: var(--accent);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="section">
+            <div class="container">
+                <div style="display: flex; gap: var(--space-xl); align-items: center; margin-bottom: 4rem;">
+                    <div style="flex: 1.2; text-align: left;">
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Engage
+                            Our Engineering Team</span>
+                        <h1 style="font-size: 3.5rem; font-weight: 800; margin: 1rem 0;">Ready to Solve Your Most
+                            Complex
+                            Challenges</h1>
+                        <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.8;">
+                            Have a mission-critical project? Contact our senior architects for a deep-dive technical
+                            analysis of your requirements.
+                        </p>
+                    </div>
+                    <div style="flex: 0.8;">
+                        <div class="glass-card"
+                            style="padding: 0; overflow: hidden; border-radius: var(--radius-lg); position: relative; box-shadow: var(--hero-shadow);">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
+                                alt="Nexus Office" style="width: 100%; height: 350px; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: var(--hero-gradient);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div>
+                    <div class="glass-card info-card">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(99, 102, 241, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-envelope info-icon" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Email Our Advisory</h4>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">hello@nexus-unified.com</p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-card">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-phone info-icon" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Global Support Hotline</h4>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">+1 (555) 012-3456</p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-card" style="margin-bottom: 0;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(244, 63, 94, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-map-marker-alt info-icon" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">HQ & Innovation Lab</h4>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">123 Future Suite, Silicon
+                                Valley, CA</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center;">
+                        <a href="#" class="btn btn-outline"
+                            style="padding: 1rem; width: 50px; height: 50px; justify-content: center; border-radius: 12px;"
+                            title="Twitter">
+                            <i class="fab fa-twitter" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline"
+                            style="padding: 1rem; width: 50px; height: 50px; justify-content: center; border-radius: 12px;"
+                            title="GitHub">
+                            <i class="fab fa-github" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline"
+                            style="padding: 1rem; width: 50px; height: 50px; justify-content: center; border-radius: 12px;"
+                            title="LinkedIn">
+                            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-xl); border: 1px solid rgba(255,255,255,0.05);">
+                    <h3 style="margin-bottom: 2rem;">Project Inquiry Form</h3>
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <label
+                                    style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Full
+                                    Name</label>
+                                <input type="text" class="form-control" style="margin-top: 0.5rem; margin-bottom: 0;"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label
+                                    style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Work
+                                    Email</label>
+                                <input type="email" class="form-control" style="margin-top: 0.5rem; margin-bottom: 0;"
+                                    placeholder="john@company.com">
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Subject
+                                of Inquiry</label>
+                            <input type="text" class="form-control" style="margin-top: 0.5rem; margin-bottom: 0;"
+                                placeholder="Technical Consultation / Project Delivery">
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label
+                                style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Brief
+                                Project Overview</label>
+                            <textarea class="form-control" rows="6" style="margin-top: 0.5rem; margin-bottom: 0;"
+                                placeholder="Tell us about your technical goals and business requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; justify-content: center; padding: 1.2rem; font-size: 1.1rem; box-shadow: var(--shadow-glow);">
+                            Submit Technical Inquiry <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div style="margin-top: 4rem;">
+                <div class="glass-card"
+                    style="height: 500px; overflow: hidden; padding: 0.8rem; background: var(--bg-card); border: 1px solid var(--border-glass);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101410.22234509156!2d-122.14723928189578!3d37.4026366579058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad7ea1257%3A0x13df3543f260431b!2sSilicon%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1672531234567!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0; border-radius: var(--radius-md);" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: var(--space-md);">
+                        <i class="fas fa-cubes"></i>
+                        <span>NEXUS</span>
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The definitive solution for modern
+                        entrepreneurs, creators, and
+                        businesses looking to unify their digital presence.</p>
+                    <a href="../auth/signup.html" class="btn btn-primary">Sign Up Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">SaaS Tools</a></li>
+                        <li><a href="services.html">E-commerce</a></li>
+                        <li><a href="services.html">Learning</a></li>
+                        <li><a href="services.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links" style="margin-bottom: 1.5rem;">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Nexus Unified Platforms. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
