@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Advanced Operations</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-v2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-xl) 0;
+            text-align: left;
+        }
+
+        .hero-v2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .floating-cards {
+            position: relative;
+            height: 500px;
+        }
+
+        .floating-card {
+            position: absolute;
+            width: 280px;
+            padding: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-1 {
+            top: 0;
+            left: 0;
+            animation-delay: 0s;
+        }
+
+        .card-2 {
+            top: 150px;
+            right: 0;
+            animation-delay: 2s;
+        }
+
+        .card-3 {
+            bottom: 0;
+            left: 100px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .feature-bento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 1.5rem;
+        }
+
+        .bento-item {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-big {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .bento-wide {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <header id="header" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-cubes"></i>
+                    <span>NEXUS</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="home2.html" class="nav-link active">Home 2</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu"
+                        aria-expanded="false">
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                        <div class="hamburger-line" aria-hidden="true"></div>
+                    </button>
+                    <a href="../auth/login.html" class="btn btn-outline" id="loginBtn">Login</a>
+                    <a href="../auth/signup.html" class="btn btn-primary" id="signupBtn">Sign Up</a>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme" aria-pressed="false">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown" id="accountDropdown">
+                        <button class="user-nav-toggle" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="accountMenu" aria-label="Account Menu">
+                            <span class="user-role-badge"
+                                style="font-size: 0.75rem; background: var(--bg-glass); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary); margin-right: 0.5rem;">User</span>
+                            <span>Account</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </button>
+                        <div class="dropdown-menu" id="accountMenu" role="menu">
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-bell"></i>
+                                Notifications</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="fas fa-cog"></i> Settings</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-user"></i> Profile</a>
+                            <a href="#" class="dropdown-item" role="menuitem"><i class="far fa-credit-card"></i>
+                                Billing</a>
+                            <div class="dropdown-divider" role="separator"></div>
+                            <a href="../auth/login.html" class="dropdown-item" role="menuitem"
+                                style="color: var(--accent);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero V2 -->
+        <section class="hero-v2">
+            <div class="container">
+                <div class="hero-v2-grid">
+                    <div class="animate-fade">
+                        <span
+                            style="color: var(--primary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Nexus
+                            v4.5 Enterprise</span>
+                        <h1 style="font-size: 4rem; line-height: 1.1; margin: 1.5rem 0; font-weight: 800;">
+                            The Next Era of <br>
+                            <span class="gradient-text">Intelligent Operations</span>
+                        </h1>
+                        <p
+                            style="font-size: 1.25rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; max-width: 550px;">
+                            Experience a unified command center designed for the modern technical landscape. Scalable,
+                            secure, and architected for extreme performance.
+                        </p>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="../auth/signup.html" class="btn btn-primary"
+                                style="padding: 1rem 2.5rem; border-radius: 50px;">Get Started <i
+                                    class="fas fa-bolt"></i></a>
+                            <a href="#features" class="btn btn-outline"
+                                style="padding: 1rem 2.5rem; border-radius: 50px;">Explore Architecture</a>
+                        </div>
+                    </div>
+                    <div class="floating-cards animate-slide" style="perspective: 1000px;">
+                        <div class="glass-card floating-card card-1">
+                            <i class="fas fa-shield-alt"
+                                style="font-size: 2rem; color: var(--success); margin-bottom: 1rem;"></i>
+                            <h4>End-to-End Security</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Military-grade encryption for every
+                                data byte.</p>
+                        </div>
+                        <div class="glass-card floating-card card-2">
+                            <i class="fas fa-chart-line"
+                                style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                            <h4>Real-time Analytics</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Sub-second latency on global
+                                telemetry.</p>
+                        </div>
+                        <div class="glass-card floating-card card-3">
+                            <i class="fas fa-network-wired"
+                                style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                            <h4>Hybrid Infrastructure</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Seamless multi-cloud orchestration.
+                            </p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+                            alt="Tech Sphere"
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; object-fit: contain; z-index: -1; opacity: 0.4; filter: blur(5px);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Features -->
+        <section id="features" class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 3rem; font-weight: 800;">Built for Technical Leaders</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto;">A modular ecosystem that
+                        adapts to your strategic requirements.</p>
+                </div>
+
+                <div class="feature-bento">
+                    <div class="glass-card bento-item bento-big">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.2;">
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Platform
+                            Core</span>
+                        <h3 style="font-size: 2rem; margin: 0.5rem 0;">Modular Backbone</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Deploy only what you need. Our
+                            micro-kernel architecture allows for extreme customization without the bloat of monolithic
+                            systems.</p>
+                    </div>
+                    <div class="glass-card bento-item">
+                        <i class="fas fa-brain"
+                            style="font-size: 1.5rem; color: var(--accent); margin-bottom: auto;"></i>
+                        <h4 style="margin-top: 1rem;">AI Synthesis</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Predictive modeling for ops.</p>
+                    </div>
+                    <div class="glass-card bento-item">
+                        <i class="fas fa-terminal"
+                            style="font-size: 1.5rem; color: var(--secondary); margin-bottom: auto;"></i>
+                        <h4 style="margin-top: 1rem;">Dev-First CLI</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Powerful tooling for creators.</p>
+                    </div>
+                    <div class="glass-card bento-item bento-wide">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.15;">
+                        <h3 style="margin-top: 1rem;">Global Mesh Network</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Edge computing at 200+ global locations
+                            for instant delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container" style="text-align: center;">
+                <div class="glass-card"
+                    style="padding: 5rem; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));">
+                    <h2 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 2rem;">Ready to upgrade your stack?
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.25rem; max-width: 700px; margin: 0 auto 3rem;">
+                        Join 2,500+ enterprises that have already migrated to the Nexus Unified Platform.
+                    </p>
+                    <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                        <a href="contact.html" class="btn btn-primary"
+                            style="padding: 1.2rem 3.5rem; font-size: 1.1rem; border-radius: 50px;">Request a Demo</a>
+                        <a href="pricing.html" class="btn btn-outline"
+                            style="padding: 1.2rem 3.5rem; font-size: 1.1rem; border-radius: 50px;">View Enterprise
+                            Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: var(--space-md);">
+                        <i class="fas fa-cubes"></i>
+                        <span>NEXUS</span>
+                    </a>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The definitive solution for modern
+                        entrepreneurs, creators, and businesses looking to unify their digital presence.</p>
+                    <a href="../auth/signup.html" class="btn btn-primary">Sign Up Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">SaaS Tools</a></li>
+                        <li><a href="services.html">E-commerce</a></li>
+                        <li><a href="services.html">Learning</a></li>
+                        <li><a href="services.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links" style="margin-bottom: 1.5rem;">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Nexus Unified Platforms. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
